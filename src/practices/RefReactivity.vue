@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 
-let count = ref(0);
+let count = ref(0); // reactive for single value
 console.log(count);
 
 setInterval(() => {
