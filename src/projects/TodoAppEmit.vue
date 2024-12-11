@@ -1,7 +1,6 @@
 <script setup>
 import { computed, reactive, ref } from "vue";
-import TodoComponent from "./components/TodoComponent.vue";
-
+import TodoComponentEmit from "../components/TodoComponentEmit.vue";
 
 const todos = reactive([
   {
@@ -33,7 +32,7 @@ const todos = reactive([
 
 const todo = ref("");
 
-// const removeTodo = (index) => todos.splice(index, 1);
+const removeTodo = (index) => todos.splice(index, 1);
 
 const addTodo = () => {
   if (todo.value.length > 0) {
@@ -86,8 +85,7 @@ const completedTodos = computed(
 
           <ul v-if="todos.length">
             <li v-for="(todo, index) in todos" :key="todo.id">
-              <!-- <TodoComponent :todo="todo" :index="index" :removeTodo="removeTodo" /> -->
-              <TodoComponent :todo="todo" :index="index" :todos="todos" />
+              <TodoComponentEmit :todo="todo" :index="index" @remove="removeTodo" />
             </li>
           </ul>
           <p v-else class="text-gray-500 pt-3">No task yet.</p>

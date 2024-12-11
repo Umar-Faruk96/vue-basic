@@ -120,7 +120,7 @@ const completedTodos = computed(
                 </div>
 
                 <label
-                  class="cursor-pointer select-none text-gray-700"
+                  class="cursor-pointer select-none"
                   :class="{ 'text-gray-300': todo.completed }"
                   :for="'todo' + todo.id"
                 >
