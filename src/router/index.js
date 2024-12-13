@@ -20,8 +20,9 @@ const router = createRouter({
     },
     {
       path: "/posts/:id",
-        name: "posts",
-      component: PostsView
+      name: "posts",
+      component: PostsView,
+      props: true,
     },
   ],
 });
